@@ -76,6 +76,8 @@ const howItWorks = [
     }
 ]
 
+const whatsappUrl = "https://wa.me/6285175434869?text=Halo%20OtomasiGo,%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut.";
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center bg-gray-50/20">
@@ -198,8 +200,8 @@ export default function Home() {
           <p className="text-lg text-primary-foreground/80 mt-4 max-w-2xl mx-auto">
             Hubungi kami sekarang untuk konsultasi gratis dan temukan bagaimana OtomasiGo dapat membantu bisnis Anda tumbuh lebih cepat.
           </p>
-          <Button size="lg" className="mt-8 bg-white hover:bg-gray-100 text-primary font-bold shadow-lg">
-            Hubungi Kami
+          <Button size="lg" asChild className="mt-8 bg-white hover:bg-gray-100 text-primary font-bold shadow-lg">
+            <Link href={whatsappUrl} target="_blank">Hubungi Kami</Link>
           </Button>
         </div>
       </section>

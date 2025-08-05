@@ -12,8 +12,9 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/#layanan', label: 'Layanan' },
   { href: '/#how-it-works', label: 'Cara Kerja' },
-  { href: '/tentang', label: 'Tentang Kami' },
 ];
+
+const whatsappUrl = "https://wa.me/6285175434869?text=Halo%20OtomasiGo,%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut.";
 
 export default function Header() {
   const pathname = usePathname();
@@ -41,8 +42,8 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            Hubungi Kami
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Link href={whatsappUrl} target="_blank">Hubungi Kami</Link>
           </Button>
         </div>
         <div className="md:hidden">
@@ -55,7 +56,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="grid gap-6 p-6">
-                <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+                <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
                   <Bot className="h-6 w-6 text-primary" />
                   <span className="font-headline">OtomasiGo</span>
                 </Link>
@@ -74,8 +75,8 @@ export default function Header() {
                     </Link>
                   ))}
                 </nav>
-                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>
-                  Hubungi Kami
+                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>
+                   <Link href={whatsappUrl} target="_blank">Hubungi Kami</Link>
                 </Button>
               </div>
             </SheetContent>

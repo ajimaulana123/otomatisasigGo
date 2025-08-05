@@ -4,6 +4,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 export default function Footer() {
+    const whatsappUrl = "https://wa.me/6285175434869?text=Halo%20OtomasiGo,%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut.";
+
   return (
     <footer className="w-full border-t bg-gray-100/80 dark:bg-gray-900/80 pt-16 pb-8">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-4 md:px-6">
@@ -35,8 +37,7 @@ export default function Footer() {
           <nav className="grid gap-2 text-sm">
              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
              <Link href="/#layanan" className="text-muted-foreground hover:text-primary transition-colors">Layanan</Link>
-             <Link href="/tentang" className="text-muted-foreground hover:text-primary transition-colors">Tentang Kami</Link>
-             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Kontak</Link>
+             <Link href={whatsappUrl} target="_blank" className="text-muted-foreground hover:text-primary transition-colors">Kontak</Link>
           </nav>
         </div>
         <div className="space-y-4">
