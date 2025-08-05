@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Bot, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -56,6 +56,9 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+               <SheetHeader className="sr-only">
+                <SheetTitle>Menu</SheetTitle>
+              </SheetHeader>
               <div className="grid gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
                   <Bot className="h-6 w-6 text-primary" />
