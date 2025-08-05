@@ -76,7 +76,7 @@ const howItWorks = [
     }
 ]
 
-const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda. Terima kasih.`;
+const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda.`;
 
 const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whatsappMessage)}`;
 

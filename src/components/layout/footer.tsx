@@ -2,7 +2,7 @@ import { Bot, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
-    const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda. Terima kasih.`;
+    const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda.`;
     const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (

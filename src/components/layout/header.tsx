@@ -14,7 +14,7 @@ const navLinks = [
   { href: '/#how-it-works', label: 'Cara Kerja' },
 ];
 
-const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda. Terima kasih.`;
+const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda.`;
 const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whatsappMessage)}`;
 
 export default function Header() {
