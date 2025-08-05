@@ -63,15 +63,22 @@ export default function Header() {
   }, [pathname]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('/#')) {
+    if (href === '/' || href.startsWith('/#')) {
       e.preventDefault();
-      const targetId = href.substring(2);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
+      if (href === '/') {
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // Offset for sticky header
+          top: 0,
           behavior: 'smooth',
         });
+      } else {
+        const targetId = href.substring(2);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Offset for sticky header
+            behavior: 'smooth',
+          });
+        }
       }
     }
     setIsOpen(false);
@@ -80,7 +87,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+        <Link href="/" onClick={(e) => handleLinkClick(e, '/')} className="flex items-center gap-2 font-bold text-lg">
           <Bot className="h-6 w-6 text-primary" />
           <span className="font-headline">OtomasiGo</span>
         </Link>
@@ -114,10 +121,10 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="right">
                <SheetHeader>
-                <SheetTitle className="sr-only">Menu</SheetTitle>
+                <SheetTitle className="sr-only">Menu Navigasi</SheetTitle>
               </SheetHeader>
               <div className="grid gap-6 p-6">
-                <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
+                <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={(e) => handleLinkClick(e, '/')}>
                   <Bot className="h-6 w-6 text-primary" />
                   <span className="font-headline">OtomasiGo</span>
                 </Link>
