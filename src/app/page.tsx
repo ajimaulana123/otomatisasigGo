@@ -53,8 +53,8 @@ const services = [
   },
   {
     icon: <Bot className="h-10 w-10 text-primary" />,
-    title: 'Generator Konten AI',
-    description: 'Buat konten media sosial dan draf artikel secara instan dengan bantuan asisten AI kami.',
+    title: 'Solusi AI Kustom',
+    description: 'Implementasikan solusi AI yang disesuaikan untuk kebutuhan unik bisnis Anda.',
   },
 ];
 
@@ -94,9 +94,6 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold shadow-lg">
                 <Link href="#layanan">Mulai Sekarang <ArrowRight className="ml-2 h-5 w-5"/></Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-base font-semibold">
-                <Link href="/content-generator">Coba Generator AI</Link>
               </Button>
             </div>
           </div>
