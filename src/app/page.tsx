@@ -82,7 +82,7 @@ const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whats
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center bg-gray-50/20">
+    <div className="flex flex-col items-center bg-gray-50/20" id="home">
       <section className="w-full bg-white py-24 md:py-32">
         <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center px-4 md:px-6">
           <div className="space-y-6">

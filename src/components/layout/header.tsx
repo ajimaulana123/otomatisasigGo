@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
@@ -20,6 +20,62 @@ const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whats
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('/');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks
+        .map(link => {
+            const id = link.href.split('#')[1];
+            if (!id) return null;
+            const section = document.getElementById(id);
+            return section ? { id, section } : null;
+        })
+        .filter(Boolean);
+      
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      let currentActive = '/';
+
+      if (pathname === '/') {
+          for (const item of sections) {
+              if (item && item.section.offsetTop <= scrollPosition) {
+                  currentActive = `/#${item.id}`;
+              }
+          }
+
+          // Check if at the top of the page
+          if (window.scrollY < 100) {
+              currentActive = '/';
+          }
+      } else {
+          currentActive = pathname;
+      }
+
+
+      setActiveLink(currentActive);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname]);
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.substring(2);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80, // Offset for sticky header
+          behavior: 'smooth',
+        });
+      }
+    }
+    setIsOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -33,9 +89,10 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                pathname === link.href ? "text-primary" : "text-muted-foreground"
+                activeLink === link.href ? "text-primary" : "text-muted-foreground"
               )}
             >
               {link.label}
@@ -56,8 +113,8 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-               <SheetHeader className="sr-only">
-                <SheetTitle>Menu</SheetTitle>
+               <SheetHeader>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
               </SheetHeader>
               <div className="grid gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 font-bold text-lg" onClick={() => setIsOpen(false)}>
@@ -71,9 +128,9 @@ export default function Header() {
                       href={link.href}
                       className={cn(
                         "text-base font-medium transition-colors hover:text-primary",
-                         pathname === link.href ? "text-primary" : "text-muted-foreground"
+                         activeLink === link.href ? "text-primary" : "text-muted-foreground"
                       )}
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => handleLinkClick(e, link.href)}
                     >
                       {link.label}
                     </Link>
