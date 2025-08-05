@@ -1,13 +1,18 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
+const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
+
 export const metadata: Metadata = {
-  title: 'OtomasiGo | Otomatiskan Bisnis Anda',
+  title: 'OtomasiGo | Solusi AI & Otomatisasi Bisnis di Indonesia',
   description:
-    'Layanan otomatisasi bisnis menggunakan n8n, chatbot WhatsApp & Telegram, post konten medsos, artikel, kelola data spreadsheet, Google Drive, dan email.',
+    'Tingkatkan efisiensi bisnis Anda dengan OtomasiGo. Kami menyediakan layanan otomatisasi alur kerja n8n, chatbot AI (WhatsApp & Telegram), hingga manajemen konten.',
+  keywords: "otomatisasi bisnis, solusi AI, n8n, chatbot whatsapp, chatbot telegram, otomatisasi indonesia, efisiensi bisnis",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
@@ -16,19 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-          rel="stylesheet"
-        ></link>
-      </head>
+    <html lang="id" className={inter.variable}>
       <body className="font-body antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
           <Header />
