@@ -103,7 +103,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="https://placehold.co/600x600.png"
+              src="/hero.png"
               alt="Automation Illustration"
               width={600}
               height={600}

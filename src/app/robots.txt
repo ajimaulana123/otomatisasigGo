@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://otomasigo.vercel.app/sitemap.xml
