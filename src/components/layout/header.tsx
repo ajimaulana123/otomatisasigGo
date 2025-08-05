@@ -14,19 +14,8 @@ const navLinks = [
   { href: '/#how-it-works', label: 'Cara Kerja' },
 ];
 
-const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(`Halo OtomasiGo, saya tertarik dengan layanan Anda.
-
-Saya ingin berkonsultasi mengenai layanan: (Mohon pilih salah satu)
-1. Otomatisasi Alur Kerja n8n
-2. Chatbot WhatsApp & Telegram
-3. Otomatisasi Konten Medsos
-4. Otomatisasi Artikel & Blog
-5. Otomatisasi Spreadsheet
-6. Otomatisasi Google Drive
-7. Otomatisasi Email Marketing
-8. Solusi AI Kustom
-
-Terima kasih.`)}`;
+const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda. Terima kasih.`;
+const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whatsappMessage)}`;
 
 export default function Header() {
   const pathname = usePathname();

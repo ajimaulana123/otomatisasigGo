@@ -2,19 +2,8 @@ import { Bot, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
-    const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(`Halo OtomasiGo, saya tertarik dengan layanan Anda.
-
-Saya ingin berkonsultasi mengenai layanan: (Mohon pilih salah satu)
-1. Otomatisasi Alur Kerja n8n
-2. Chatbot WhatsApp & Telegram
-3. Otomatisasi Konten Medsos
-4. Otomatisasi Artikel & Blog
-5. Otomatisasi Spreadsheet
-6. Otomatisasi Google Drive
-7. Otomatisasi Email Marketing
-8. Solusi AI Kustom
-
-Terima kasih.`)}`;
+    const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda. Terima kasih.`;
+    const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <footer className="w-full border-t bg-gray-100/80 dark:bg-gray-900/80 pt-16 pb-8">

@@ -76,13 +76,7 @@ const howItWorks = [
     }
 ]
 
-const serviceListText = services.map((s, i) => `${i + 1}. ${s.title}`).join('\n');
-const whatsappMessage = `Halo OtomasiGo, saya tertarik dengan layanan Anda.
-
-Saya ingin berkonsultasi mengenai layanan: (Mohon pilih salah satu)
-${serviceListText}
-
-Terima kasih.`;
+const whatsappMessage = `Halo OtomasiGo, saya tertarik untuk berkonsultasi mengenai layanan Anda. Terima kasih.`;
 
 const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -174,28 +168,14 @@ export default function Home() {
       
       <section id="testimonial" className="w-full py-20 md:py-28">
          <div className="container mx-auto px-4 md:px-6">
-             <div className="grid md:grid-cols-5 gap-12 items-center">
-                <div className="md:col-span-2">
-                    <Image
-                        src="https://placehold.co/400x500.png"
-                        alt="Happy Customer"
-                        width={400}
-                        height={500}
-                        className="rounded-2xl shadow-xl object-cover w-full h-full"
-                        data-ai-hint="professional portrait"
-                    />
+             <div className="text-center max-w-3xl mx-auto">
+                <div className="bg-primary/10 text-primary inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6">
+                    <ThumbsUp className="h-5 w-5"/>
+                    <span className="font-semibold">Klien Kami Berbicara</span>
                 </div>
-                 <div className="md:col-span-3">
-                    <div className="bg-primary/10 text-primary inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6">
-                        <ThumbsUp className="h-5 w-5"/>
-                        <span className="font-semibold">Klien Kami Berbicara</span>
-                    </div>
-                     <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800">
-                         “OtomasiGo telah mengubah cara kami beroperasi. Proses yang tadinya memakan waktu berjam-jam kini selesai dalam hitungan menit. Sungguh luar biasa!”
-                     </blockquote>
-                     <p className="mt-6 font-bold text-lg text-gray-900">Andi Wijaya</p>
-                     <p className="text-muted-foreground">CEO, Maju Jaya Group</p>
-                 </div>
+                 <blockquote className="text-2xl md:text-3xl font-light italic text-gray-800">
+                     “OtomasiGo telah mengubah cara kami beroperasi. Proses yang tadinya memakan waktu berjam-jam kini selesai dalam hitungan menit.”
+                 </blockquote>
              </div>
          </div>
       </section>
