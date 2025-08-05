@@ -151,10 +151,15 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
-             <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 hidden md:block" />
-             <div className="absolute top-1/2 left-0 w-full h-1 bg-primary hidden md:block" style={{width: "66%"}}/>
+             <div
+                className="absolute top-8 left-0 right-0 h-0.5 w-full -z-10 hidden md:block"
+                style={{
+                    background:
+                    'repeating-linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)) 4px, transparent 4px, transparent 8px))',
+                }}
+            />
             {howItWorks.map((item) => (
-              <div key={item.step} className="flex flex-col items-center text-center z-10">
+              <div key={item.step} className="flex flex-col items-center text-center z-10 bg-white">
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white text-2xl font-bold border-4 border-white shadow-md">
                     {item.step}
                 </div>
