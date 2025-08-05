@@ -1,14 +1,24 @@
 import { Bot, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 
 export default function Footer() {
-    const whatsappUrl = "https://wa.me/6285175434869?text=Halo%20OtomasiGo,%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut.";
+    const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(`Halo OtomasiGo, saya tertarik dengan layanan Anda.
+
+Saya ingin berkonsultasi mengenai layanan: (Mohon pilih salah satu)
+1. Otomatisasi Alur Kerja n8n
+2. Chatbot WhatsApp & Telegram
+3. Otomatisasi Konten Medsos
+4. Otomatisasi Artikel & Blog
+5. Otomatisasi Spreadsheet
+6. Otomatisasi Google Drive
+7. Otomatisasi Email Marketing
+8. Solusi AI Kustom
+
+Terima kasih.`)}`;
 
   return (
     <footer className="w-full border-t bg-gray-100/80 dark:bg-gray-900/80 pt-16 pb-8">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-4 md:px-6">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4 md:px-6">
         <div className="space-y-4 col-span-1 lg:col-span-1">
           <Link href="/" className="flex items-center gap-2 font-bold text-2xl">
             <Bot className="h-8 w-8 text-primary" />
@@ -46,14 +56,6 @@ export default function Footer() {
              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Kebijakan Privasi</Link>
              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Syarat & Ketentuan</Link>
           </nav>
-        </div>
-        <div className="space-y-4">
-           <h4 className="font-semibold text-base text-foreground">Berlangganan Newsletter</h4>
-           <p className="text-sm text-muted-foreground">Dapatkan tips dan update terbaru seputar otomatisasi langsung di email Anda.</p>
-            <div className="flex gap-2 mt-2">
-                <Input placeholder="Email Anda" className="bg-white dark:bg-gray-800"/>
-                <Button className="bg-primary hover:bg-primary/90">Daftar</Button>
-            </div>
         </div>
       </div>
        <div className="border-t mt-12">

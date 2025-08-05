@@ -76,7 +76,15 @@ const howItWorks = [
     }
 ]
 
-const whatsappUrl = "https://wa.me/6285175434869?text=Halo%20OtomasiGo,%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut.";
+const serviceListText = services.map((s, i) => `${i + 1}. ${s.title}`).join('\n');
+const whatsappMessage = `Halo OtomasiGo, saya tertarik dengan layanan Anda.
+
+Saya ingin berkonsultasi mengenai layanan: (Mohon pilih salah satu)
+${serviceListText}
+
+Terima kasih.`;
+
+const whatsappUrl = `https://wa.me/6285175434869?text=${encodeURIComponent(whatsappMessage)}`;
 
 export default function Home() {
   return (
