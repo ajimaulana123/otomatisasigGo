@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     'efisiensi bisnis',
   ],
   robots: 'index, follow',
-  authors: [{ name: 'OtomasiGo Team', url: 'https://otomatisasi-go.vercel.app' }],
+  authors: [{ name: 'OtomasiGo Team', url: 'https://otomasigo.vercel.app' }],
   creator: 'OtomasiGo',
   publisher: 'OtomasiGo',
   openGraph: {
     title: 'OtomasiGo | Solusi AI & Otomatisasi Bisnis di Indonesia',
     description:
       'Layanan otomatisasi bisnis seperti n8n, chatbot AI, WhatsApp bot, dan lainnya.',
-    url: 'https://otomatisasi-go.vercel.app',
+    url: 'https://otomasigo.vercel.app',
     siteName: 'OtomasiGo',
     images: [
       {
