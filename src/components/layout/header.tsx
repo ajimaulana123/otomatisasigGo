@@ -8,6 +8,7 @@ import Link from 'next/link';
 const navLinks = [
   { href: '#layanan', label: 'Layanan' },
   { href: '/content-generator', label: 'Buat Konten' },
+  { href: '#how-it-works', label: 'Cara Kerja' },
   { href: '#', label: 'Tentang Kami' },
 ];
 
